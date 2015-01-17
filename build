@@ -1,0 +1,25 @@
+#!/bin/bash
+
+################################################################################
+
+# Script to compile tfgc from scratch.
+
+################################################################################
+
+EXECUTABLE_NAME="tfgc"
+
+echo -e "\tbuilding $EXECUTABLE_NAME with GCC\n"
+
+gcc -std=c11 \
+-pedantic -Wall -Wextra \
+src/asrt.c \
+src/file.c \
+src/ents.c \
+src/echo.c \
+src/main.c \
+src/dir.c \
+src/str.c \
+src/gc.c \
+-o $EXECUTABLE_NAME
+
+echo -e "\tdone"
